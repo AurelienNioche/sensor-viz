@@ -1,0 +1,24 @@
+{
+  "name": "uplot-playground",
+  "version": "1.0.0",
+  "description": "A demonstration project showcasing [uPlot](https://github.com/leeoniya/uPlot) - a fast, memory-efficient charting library - with a Python backend using FastAPI.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "playwright": "^1.58.0"
+  }
+}

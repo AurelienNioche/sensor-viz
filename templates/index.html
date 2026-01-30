@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uPlot Playground</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>uPlot Signal Processing</h1>
+        <p>Fast signal analysis and visualization with uPlot</p>
+    </header>
+
+    <main class="container">
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>Time Domain Signal</h2>
+                <p>3-channel waveform (Ch1=50Hz, Ch2=120Hz, Ch3=200Hz)</p>
+            </div>
+            <div id="chart-signal" class="chart-container"></div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>Frequency Domain (FFT)</h2>
+                <p>3-channel FFT spectrum analysis</p>
+            </div>
+            <div id="chart-fft" class="chart-container"></div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>Low-pass Filtering</h2>
+                <p>3-channel filtered signals</p>
+            </div>
+            <div id="chart-filtering" class="chart-container"></div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>Power Spectral Density</h2>
+                <p>3-channel PSD (Welch's method)</p>
+            </div>
+            <div id="chart-psd" class="chart-container"></div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>Bandpass Filter</h2>
+                <p>3-channel bandpass (40-80Hz)</p>
+            </div>
+            <div id="chart-bandpass" class="chart-container"></div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-header">
+                <h2>3D Trajectory</h2>
+                <p id="trajectory-description">Default: Accelerometer data (click any time series above to visualize it in 3D)</p>
+                <div style="margin-top: 10px; display: flex; align-items: center; gap: 15px;">
+                    <div>
+                        <label for="window-slider" style="display: inline-block; margin-right: 10px; font-size: 0.85rem;">
+                            Window: <span id="window-value">0.5</span>s
+                        </label>
+                        <input type="range" id="window-slider" min="0.1" max="5" step="0.1" value="0.5" style="width: 250px;">
+                    </div>
+                    <button id="reset-view" class="btn" style="padding: 5px 15px; font-size: 0.85rem;">Reset to Default</button>
+                </div>
+            </div>
+            <div id="chart-accelerometer" class="chart-container" style="height: 450px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with <a href="https://github.com/leeoniya/uPlot" target="_blank">uPlot</a>, <a href="https://plotly.com/javascript/" target="_blank">Plotly.js</a>, and <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.iife.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="/static/js/charts.js"></script>
+</body>
+</html>
